@@ -1,0 +1,19 @@
+{
+  "name": "fantigue-api",
+  "version": "0.1.0",
+  "description": "Record instances of anxiety",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sequelize": "^5.13.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "Kurt M. Ma. Coll",
+  "license": "MIT"
+}
