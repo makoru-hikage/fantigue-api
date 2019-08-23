@@ -1,13 +1,15 @@
+/* Imports */
 const DOTENV = require('dotenv')
-DOTENV.config()
+const express = require('express')
+const Sequelize = require('sequelize')
 
 const routes = require('./routes');
 
-const express = require('express')
-const app = express()
-const port = process.env.PORT
-const Sequelize = require('sequelize')
+/* Get the variables from .env */
+DOTENV.config()
 
+/* Initialisations */
+const app = express()
 const sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USERNAME,
@@ -26,12 +28,14 @@ const sequelize = new Sequelize(
     }
 )
 
-//Check if this is connected well to the database
+/* Check DB connection */
 sequelize
     .authenticate()
     .then(() => console.log(`DB successfully connected to ${process.env.DB_HOST} at port: ${process.env.DB_PORT}!`))
 
-//Initiate Routes
+/* Initiate Routes */
 app.use('/', routes)
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+/*Run the server */
+const port = process.env.PORT
+app.listen(port, () => console.log(`Server successfully listening on port: ${port}`))
