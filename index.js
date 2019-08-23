@@ -1,32 +1,15 @@
 /* Imports */
 const DOTENV = require('dotenv')
 const express = require('express')
-const Sequelize = require('sequelize')
 
 const routes = require('./routes')
 
 /* Get the variables from .env */
 DOTENV.config()
 
-/* Initialisations */
+/* Initialisation */
 const app = express()
-const sequelize = new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USERNAME,
-    process.env.DB_PASSWORD, {
-        host: process.env.DB_HOST,
-        dialect: process.env.DB_TYPE,
-        pool: {
-            max: 10,
-            min: 0,
-            acquire: 30000,
-            idle: 10000
-        },
-        define: {
-            underscored: true
-        }
-    }
-)
+const sequelize = require('./sequelize')
 
 /* Check DB connection */
 sequelize
