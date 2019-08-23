@@ -3,7 +3,7 @@ const DOTENV = require('dotenv')
 const express = require('express')
 const Sequelize = require('sequelize')
 
-const routes = require('./routes');
+const routes = require('./routes')
 
 /* Get the variables from .env */
 DOTENV.config()
