@@ -1,3 +1,5 @@
+global.root_require = name => require(`${__dirname}/${name}`)
+
 /* Imports */
 const DOTENV = require('dotenv')
 const express = require('express')
