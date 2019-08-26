@@ -1,13 +1,13 @@
-const express = require('express');
+const express = require('express')
 
-const routes = express.Router();
+const routes = express.Router()
 
 routes.get('/', (req, res) => {
-    res.status(200).json({ message: 'Perhaps' });
+    res.status(200).json({ message: 'Perhaps' })
 });
 
 routes.use(function (req, res) {
-    response.sendNotFound(res);
+    response.sendNotFound(res)
 });
 
-module.exports = routes;
+module.exports = routes
