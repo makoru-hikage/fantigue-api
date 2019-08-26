@@ -7,7 +7,7 @@ routes.get('/', (req, res) => {
 });
 
 routes.use(function (req, res) {
-    response.sendNotFound(res)
+    res.status(404).send('Not found')
 });
 
 module.exports = routes
